@@ -2,16 +2,19 @@ import telebot
 import random , os    
 # Замени 'TOKEN' на токен твоего бота
 # Этот токен ты получаешь от BotFather, чтобы бот мог работать
-bot = telebot.TeleBot("")
+bot = telebot.TeleBot("7801153685:AAGtb6z0OMsEmWDn0pzSAThVltqFrABEiuY")
     
 @bot.message_handler(commands=['start'])
 def send_welcome(message):
-    bot.reply_to(message, "Привет! Я твой Telegram бот.Напиши /aco что бы узнать про мусор и /aco2 чтоб узнать как помочь планете")
+    bot.reply_to(message, "Привет! Я твой Telegram бот.Напиши /help чтоб посмотреть список команд")
 
+@bot.message_handler(commands=['help'])
+def send_welcome(message):
+    bot.reply_to(message, "Команды: 1 /mem показывает мем програмиста, 2 /aco показывает мем про мусор, 3 /aco2 рассказывает про помощь планете.  ")
 
 @bot.message_handler(commands=['hello'])
 def send_hello(message):
-    bot.reply_to(message, "Привет! Как дела?")
+    bot.reply_to(message, "Привет! Я твой Telegram бот.Напиши /help чтоб посмотреть список команд")
     
 @bot.message_handler(commands=['bye'])
 def send_bye(message):
